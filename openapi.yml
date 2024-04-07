@@ -1,0 +1,70 @@
+openapi: '3.1.3'
+
+info:
+  title: 'bbs-app'
+  version: 1.0.0
+
+paths:
+  /api/threads:
+    get:
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  threads:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        title:
+                          type: string
+                          example: test-title
+                        body:
+                          type: string
+                          exmaple: test-body
+                        createdAt:
+                          type: string
+                          example: 2023-04-07 17:00:00
+                        updatedAt:
+                          type: string
+                          example: 2023-04-07 17:00:00
+                        user:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: taro
+                        comments:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 1
+                              comments:
+                                type: string
+                                example: comment
+                              user:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    example: 1
+                                  name:
+                                    type: string
+                                    example: taro
+    post:
+      responses:
+        201:
+          description: Created
