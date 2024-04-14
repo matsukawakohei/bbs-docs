@@ -132,4 +132,30 @@ paths:
       responses:
         200:
           description: OK
-    
+  /api/threads/{threadId}/comments:
+    parameters:
+      - name: threadId
+        in: path
+        schema:
+          type: integer
+        required: true
+    post:
+      responses:
+        201:
+          description: Created
+  /api/threads/{threadId}/comments/{commentId}:
+    parameters:
+      - name: threadId
+        in: path
+        schema:
+          type: integer
+        required: true
+      - name: commentId
+        in: path
+        schema:
+          type: integer
+        required: true
+    put:
+      responses:
+        201:
+          description: Created
